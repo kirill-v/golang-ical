@@ -122,7 +122,7 @@ func (event *VEvent) SetSequence(seq int, props ...PropertyParameter) {
 }
 
 func (event *VEvent) SetStartAt(t time.Time, props ...PropertyParameter) {
-	event.SetProperty(ComponentPropertyDtStart, t.UTC().Format(icalTimestampFormatUtc), props...)
+	event.SetProperty(ComponentPropertyDtStart, t.Local().Format(icalTimestampFormatLocal), props...)
 }
 
 func (event *VEvent) SetAllDayStartAt(t time.Time, props ...PropertyParameter) {
@@ -131,7 +131,7 @@ func (event *VEvent) SetAllDayStartAt(t time.Time, props ...PropertyParameter) {
 }
 
 func (event *VEvent) SetEndAt(t time.Time, props ...PropertyParameter) {
-	event.SetProperty(ComponentPropertyDtEnd, t.UTC().Format(icalTimestampFormatUtc), props...)
+	event.SetProperty(ComponentPropertyDtEnd, t.Local().Format(icalTimestampFormatLocal), props...)
 }
 
 func (event *VEvent) SetAllDayEndAt(t time.Time, props ...PropertyParameter) {
